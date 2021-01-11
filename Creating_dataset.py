@@ -24,7 +24,7 @@ for (i, raw) in dataset.iterrows():
             i+=1
 
 # --printing total number of covid-19 positive images--
-print("no. of positive images", cnt)
+print("Total number of COVID-19 positive images", cnt)
 
 
 # --reading metedata excel file inorder to extract covid negative data from source dataset--
@@ -55,7 +55,7 @@ for (i, raw) in dataset.iterrows():
             i+=1
 
 # --printing total number of covid-19 negative images--
-print("no.of negative images", cnt)
+print("Total number of COVID-19 negative images", cnt)
 
 # --splitting covid positive images to 3 categories - train, valid, test--
 source_dir = "sourcedata/Covid19 Positive"
@@ -78,7 +78,7 @@ for i in range(579):
         target_path = os.path.join(destination_dir3, image_name)
         shutil.copy2(image_path, target_path)
 
-
+print("The covid-19 positive images are splitted into train, valid and test sets")
 # --splitting covid negative images to 3 categories - train, valid, test--
 source_dir = "sourcedata/Covid19 Negative"
 destination_dir1 = "dataset/train/Covid19 Negative"
@@ -99,3 +99,4 @@ for i in range(1576):
     else:
         target_path = os.path.join(destination_dir3, image_name)
         shutil.copy2(image_path, target_path)
+print("The covid-19 negative images are splitted into train, valid and test sets")
