@@ -1,3 +1,9 @@
 /dataset/
 /sourcedata/
 /source_datasets/
+/train_dataset.npy
+/train_targetset.npy
+/valid_dataset.npy
+/valid_targetset.npy
+/rough.py
+/rough1.py

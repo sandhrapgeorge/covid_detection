@@ -50,7 +50,7 @@ new_target = np_utils.to_categorical(target)
 # --permentitly storing the image array and class label array--
 np.save('train_dataset', data)
 np.save('train_targetset', new_target)
-
+print("Train dataset is preprocessed and, stored in train_dataset.npy and train_targetset.npy files ")
 data_path = 'dataset/valid'
 data = []
 target = []
@@ -76,6 +76,7 @@ target = np.array(target)
 new_target = np_utils.to_categorical(target)
 np.save('valid_dataset', data)
 np.save('valid_targetset', new_target)
+print("Valid dataset is preprocessed and, stored in valid_dataset.npy and valid_targetset.npy files ")
 
 
 
