@@ -8,7 +8,7 @@ model = load_model('model.h5')
 model.summary()
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 # path to image to visualize
-img_path = '0a7faa2a.jpg'
+img_path = 'covid_negative.jpeg'
 img = cv2.imread(img_path)
 print(img)
 img_size = 256
@@ -24,10 +24,12 @@ preds1 = model.predict_classes(resized)[0]
 print(preds1)
 
 preds = model.predict(resized)[0]
-print(preds)
 
 label = label_dict[preds1]
-print("Result is", label)
+if preds1 == 1:
+    print("Result :   Corona virus affetected cells are detected in the uploaded chest X-Ray image")
+else:
+    print("Result :   Corona virus affetected cells are not detected in the uploaded chest X-Ray image")
 # begin visualization
 #covid_output = model.output[:, 0]
 # Output feature map from the deepest convolutional layer
